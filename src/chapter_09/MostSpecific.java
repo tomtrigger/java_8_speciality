@@ -15,6 +15,7 @@ public class MostSpecific {
     }
 
     static interface B extends A {
+        @Override
         public default void hello() {
             System.out.println("Hello from B");
         }
@@ -27,6 +28,7 @@ public class MostSpecific {
     static class E extends D implements B, A {}
 
     static class F implements A, B {
+        @Override
         public void hello() {
             System.out.println("Hello from F");
         }
